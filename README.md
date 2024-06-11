@@ -5,6 +5,8 @@ Quelques photos du site:
 
 Accueil en format téléphone (site entièrement responsive):                                                                                                                          
 ![image](https://github.com/louiswin03/int-gration/assets/106116649/1a83d853-763b-4b08-8d89-d7b7fb98a835)
+![image](https://github.com/louiswin03/int-gration/assets/106116649/a40dd2dd-4e5d-4457-81b5-1c20524df641)
+
 
 Conférences : 
 ![image](https://github.com/louiswin03/int-gration/assets/106116649/f1725d1b-8df4-4f65-bcb7-535dccc695c6)
