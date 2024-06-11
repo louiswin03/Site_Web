@@ -3,7 +3,7 @@ Voici le github de mon projet de site internet de gestion de conférences réali
 
 Quelques photos du site:
 
-Accueil en format téléphone (site entièrement responsive):
+Accueil en format téléphone (site entièrement responsive):                                                                                                                          
 ![image](https://github.com/louiswin03/int-gration/assets/106116649/1a83d853-763b-4b08-8d89-d7b7fb98a835)
 
 Conférences : 
