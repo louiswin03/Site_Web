@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleCO.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <title>Ajout de conférences</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form method="POST" action="ajout_conference.php">
+            <h1>Ajout de Conférence</h1>
+            
+            <div class="input-box">
+                <input type="text" placeholder="Titre" name="titre">
+                <i class='bx bx-book'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="date" placeholder="Date" name="date">
+                <i class='bx bx-calendar'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="time" placeholder="Heure de début" name="heure_debut">
+                <i class='bx bx-time'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="time" placeholder="Heure de fin" name="heure_fin">
+                <i class='bx bx-time'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="number" placeholder="Capacité de la salle" name="salle_capacite">
+                <i class='bx bx-group'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="text" placeholder="Numéro de salle" name="salle_numero">
+                <i class='bx bx-door-open'></i>
+            </div>
+            
+            <div class="input-box">
+                <select name="sujet">
+                    <?php
+                    // Code PHP pour récupérer les sujets de la base de données
+                    // et les afficher en tant qu'options dans le formulaire
+                    foreach ($sujets as $sujet) {
+                        echo "<option value='" . $sujet['id_sujets'] . "'>" . $sujet['nom_sujet'] . "</option>";
+                    }
+                    ?>
+                </select>
+                <i class='bx bx-list-ul'></i>
+            </div>
+            
+            <button name='ajouter_conference' type="submit" class="btnco">Ajouter la conférence</button>
+            
+        </form>
+    </div>
+    
+    
+</body>
+</html>

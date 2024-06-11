@@ -1,0 +1,1098 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;600;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: url(../images/BGIMAGE.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: relative;
+    top: 0;
+    height: 15vh;
+    width: 100%;
+    padding: 30px 7vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #D9D9D9;
+}
+
+header .logo{
+    position: relative;
+    width: 20vh;  /*Modifier taille logo*/
+}
+.navigation .navactif{
+    color: #FF7004;
+}
+
+header .navigation a{
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    color: black;
+}
+
+header .navigation a:not(:last-child){
+    margin-right: 30px;
+}
+
+header .navigation a:hover{
+    color: #FF7004;
+}
+.navigation fa-regular fa-user{
+    color: black;
+    font-size: 24px;
+}
+.navigation fa-regular fa-user:hover{
+    color :#FF7004;
+}
+
+.navigation .connexion-header{
+    padding: 8px 22px 8px 22px;
+    border: 1.5px solid black;
+}
+.navigation .connexion-header:hover{
+    border: 1.5px solid #FF7004;
+}
+
+.content {
+    max-width: 800px;
+    padding: 30px 7vw;
+}
+
+.content .info h2{
+    color: white;
+    font-size: 55px;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 60px;
+    margin-bottom: 30px;
+}
+
+.content .info p{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;  
+}
+
+.content .CoBouton {
+    color: white;
+    background: #FF7004;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.content .CoBouton:hover{
+    color: #FF7004;
+    background: white;
+    transform: scale(1.2);
+}
+
+label {
+    display: none;
+}
+
+#check {
+    z-index: 3;
+    display: none;
+}
+
+/* Styles pour l'animation slide up */
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px); /* Position inital du dessous */
+    transition: opacity 1s ease, transform 1.5s ease; /*Durée de la transition*/
+}
+
+.slide-up.slide-appear {
+    opacity: 1;
+    transform: translateY(0); /* Position finale */
+}
+
+/*Responsive Design*/
+@media (max-width: 940px){
+    header .navigation{
+        display: none;
+    }
+    label {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        transition-property: color;
+    }
+    label:hover{
+        color: #FF7004;
+    }
+    label .close-btn{
+        display: none;
+    }
+    #check:checked ~ header .navigation{
+        z-index: 2;
+        position: fixed;
+        background: rgba(217, 217, 217, 1);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #check:checked ~ header .navigation a{
+        margin-right: 0;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+    }
+    #check:checked ~ header label .menu-btn{
+        display: none;
+    }
+    #check:checked ~ header label .close-btn{
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+    .content .info h2{
+        font-size: 35px;
+        line-height: 45px;
+    }
+    .content .info p{
+        font-size: 15px;
+    }
+    
+}
+
+/*Section démo avec l'image à gauche */
+
+
+.content-demo {
+    display: grid;
+    grid-template-columns: minmax(auto, 500px) 1fr; /* Première colonne avec une largeur maximale de 500px */
+    grid-column-gap: 10vw; /* Espacement entre les colonnes */
+    max-width: 100%; /* Largeur maximale pour le contenu */
+    margin: 0 auto; /* Centrage horizontal */
+    background: #d9d9d9; /* Couleur de fond pour la partie présentation image */
+    padding: 30px 7vw;
+}
+
+.imagedemo {
+    max-width: 100%;
+    height: auto;
+    width: 700px;
+}
+
+.text {
+    max-width: auto;
+    display: flex;
+    font-weight: 500;
+    flex-direction: column;
+    justify-content: center; /* Centrage vertical du texte */
+}
+
+.text h2{
+    font-size: 55px;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.text p{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;  
+}
+
+/*Mise en place du responsive design*/
+@media (max-width: 940px) {
+    .content-demo {
+        grid-template-columns: 1fr; /* Une seule colonne pour la version mobile */
+
+    }
+
+    .imagedemo {
+        width: 100%; /* Pour qu'elle s'adapte à la largeur */
+        max-width: 500px; /* Annule la largeur maximale */
+        margin-bottom: 20px; /* Espacement entre l'image et le texte */
+    }
+
+    .text {
+        max-width: 100%; /* Prend la largeur disponible */
+        text-align: center left; /* Centre le texte */
+        padding-left: 2vw;
+    }
+
+    .text h2 {
+        font-size: 35px; /* Taille de la police ajustée */
+        line-height: 1.3; /* Espacement entre les lignes */
+    }
+
+    .text p {
+        padding-top: 20px;
+        font-size: 16px; /* Taille de la police ajustée */
+    }
+}
+
+
+/*Page FAQ*/
+
+.FAQwrapper {
+    max-width: 75%;
+    margin: 7vw;
+    z-index: 1;
+    background: #D9D9D9;
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 30px 7vw 60px 7vw;
+}
+
+.FAQwrapper > h1{
+    margin: 1.5rem 0;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.question {
+    background-color: #D9D9D9;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.question i {
+    font-size: 1.6rem;
+}
+
+.active, .question:hover{
+    background-color: white;
+    color: #FF7004;
+}
+
+.reponse{
+    padding: 0 2rem 2.5rem 2rem;
+    background-color: white;
+    overflow: hidden;
+    display: none;
+}
+
+.reponse p{
+    color: rgba(0,0,0,0.7);
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.faq{
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 10px 0;
+}
+
+.faq .active {
+    border: none;
+}
+
+/*Page FAQ côté admin*/
+
+/* Styles pour le formulaire d'ajout de question */
+#addQuestionBtn {
+    background-color: #FF7004;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#addQuestionBtn:hover {
+    background-color: white;
+    color: #FF7004;
+}
+
+#addQuestionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#addQuestionForm input[type="text"],
+#addQuestionForm textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#addQuestionForm button[type="submit"] {
+    background-color: #FF7004;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#addQuestionForm button[type="submit"]:hover {
+    background-color: white;
+    color: #FF7004;
+}
+
+/*Footer*/
+
+.footer {
+    position: relative;
+    height: auto; /* Ajustement pour la hauteur automatique */
+    padding: 30px 7vw;
+    display: flex;
+    flex-wrap: wrap; /* Permettre le passage à la ligne sur les petits écrans */
+    justify-content: space-between;
+    align-items: center;
+    background: #D9D9D9;
+}
+  
+.footer .logo {
+    max-width: 100%; /* Adapter la largeur du logo à la largeur du conteneur */
+    height: auto; /* Ajustement pour la hauteur automatique */
+    margin-bottom: 20px; /* Espace sous le logo */
+}
+
+.footer img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.footer img:hover {
+    transform: scale(1.1);
+}
+
+  
+.footer > div {
+    flex: 1; /* Distribuer l'espace équitablement entre les divs */
+    text-align: center; /* Centrer le contenu des divs */
+    margin: 0 10px; /* Marge entre les éléments */
+}
+  
+.footer .titresection {
+    font-size: 18px; /* Ajustement de la taille de la section */
+    margin-bottom: 10px; /* Espace en bas de chaque section */
+}
+  
+.footer .copyright {
+    flex-basis: 100%; /* Prendre toute la largeur disponible */
+    text-align: center;
+    margin-top: 20px; /* Espace au-dessus du copyright */
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #FF7004;
+}
+
+@media screen and (max-width: 900px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer img {
+        width: 80px;
+    }
+
+    .titresection {
+        margin-bottom: 0px;
+    }
+}
+.titresection {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.titre {
+    text-align: center;
+    color: black;
+}
+
+/*Page Conférences*/
+
+.sujets-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+
+.sujet {
+    background: #D9D9D9;
+    border-style: solid;
+    border-width: 0.5vh;
+    border-radius: 20px;
+    border-color: #D9D9D9;
+    transition: border-left-width 0.3s ease;
+    width: 100%; /* Trois éléments par ligne pour les écrans larges */
+    max-width: 300px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.sujet:hover {
+    transform: scale(1.06);
+}
+
+.logosujet {
+    max-height: 250px; /* Ajuste la hauteur maximale des images */
+    max-width: 250px; /* Ajuste la largeur maximale des images */
+    padding: 30px 70px 20px 70px; /* Ajoute du padding autour des logos */
+    object-fit: contain; /* Remplissage du conteneur en conservant le ratio */
+}
+
+.sujets-container .sujet .titre {
+    text-decoration: none;
+    color: black; /* Ajout de la couleur du texte pour les liens */
+}
+
+.titre {
+    font-size: 1.1rem; /* Taille de police agrandie pour les titres */
+}
+
+
+
+
+/*Partie ajout de sujets*/
+
+.ajout-sujet:hover{
+    transform: none;
+}
+
+.input-sujet {
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 20px);
+}
+
+.ajouter-btn {
+    background-color: #FF7004;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ajouter-btn:hover {
+    background-color: #FF9500;
+}
+
+.ajouter-btn {
+    margin-top: 10px;
+    color: white;
+    background: #FF7004;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 15px 45px 15px 45px;
+    border-radius: 50px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.ajouter-btn:hover {
+    color: #FF7004;
+    background: white;
+}
+
+/*Page détails de conférences*/
+
+.container-conferences{
+    width: auto;
+    background: #d9d9d9;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    color: black;
+    border-radius: 5px;
+    padding: 30px 40px;
+    margin-top: 50px; 
+    margin-bottom: 50px; 
+    margin-left: 8vw;
+    margin-right: 8vw;
+    text-align: center;
+}
+
+.conference{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.titre-conference {
+    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+  
+/*Page conditions d'utilisation*/
+
+.CGU-container {
+    width: auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: left;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+.CGU-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.CGU-form h2{
+    margin-bottom: 10px;
+}
+
+.CGU-form .CGU-text {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 25vh;
+}
+.CGU-form .CGU-titre {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.CGU-form button[type="submit"] {
+    background-color: #FF7004;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.CGU-form button[type="submit"]:hover {
+    background-color: white;
+    color: #FF7004;
+}
+
+.delete-form {
+    display: inline; /* ou inline-block selon l'effet souhaité */
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.delete-btn {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer; /* ajoute une icône de curseur au survol */
+}
+
+.delete-btn:hover{
+    color: #FF7004;
+}
+
+.section-ajout-conf{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.addconfbtn{
+    text-decoration: none;
+    color: black;
+    background-color: #D9D9D9;
+    padding: 15px 25px 15px 25px;
+    border-radius: 30px;
+    transition: transform 0.3s;
+}
+
+.addconfbtn:hover{
+    transform: scale(1.06);
+}
+
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 16px;
+}
+
+.lang-switcher a {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.lang-switcher a:hover {
+    background-color: #eee;
+}
+
+.lang-switcher a.active {
+    background-color: #ddd;
+}
+
+/* ... Votre code existant ... */
+
+#check:checked ~ header .navigation {
+    z-index: 2;
+    position: fixed;
+    background: rgba(217, 217, 217, 1);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Occuper toute la largeur de la page */
+}
+
+#check:checked ~ header .navigation a {
+    margin-right: 0;
+    margin-bottom: 20px; /* Ajustez cet espacement selon vos préférences */
+    letter-spacing: 2px;
+}
+
+/* ... Votre code existant ... */
+
+
+
+.Forum{
+    max-width: 75%;
+    margin: 7vw;
+    z-index: 1;
+    background: #D9D9D9;
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 30px 7vw 60px 7vw;
+    margin-top: 30px; /* ou ajustez la valeur selon vos besoins */
+
+}
+
+#forum{
+    margin: 1.5rem 0;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.Forum textarea {
+    width: 40vh;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    resize: none; /* Empêche le redimensionnement de la zone de texte */
+}
+
+.question-container {
+    margin-top: 20px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: hsl(0, 0%, 45%);
+}
+
+.reponse-container {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: hsl(0, 0%, 45%);
+}
+
+.buttonforum {
+    width: 40vh;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    resize: none; }
+
+.buttonanswerforum {
+    width: 40vh;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    resize: none; }
+
+
+#questions {
+    text-decoration: underline;
+}
+
+.buttonanswer{
+    width: 40vh;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    resize: none; 
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/*/ Pour le calendrier : /*/
+
+#cal {
+    
+    margin-left: 15%;
+}
+
+#enteteCal{
+    width: 75%;
+    height: 100%;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#calT, .confstitre{
+    text-align: center;
+    font-size: 20px;
+}
+
+#avantETaprès{
+    text-align: center;
+}
+
+#apres{
+    margin-left: 20%;
+}
+
+.calbtn{
+    border: none;
+    background-color: #D9D9D9;
+}
+
+.calbtn:hover{
+    color: #FF7004;
+    font-size: 18px;
+}
+
+#Calboîte{
+    width: 75%;
+    height: 100%;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#jours{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jour{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.semaine{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.case{
+    width: 35px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 7px;
+    margin: 25px 49px 25px 49px;
+    transition: 0.1s;
+    font-size: 20px;
+}
+
+.case:hover{
+    background-color: #FF7004;
+}
+
+.enteteCm{
+    width: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #D9D9D9;
+}
+
+.dateCm{
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+@media screen and (max-width: 463px) { 
+    .case, .jour {
+        position: relative;
+        margin: 2px 3px 2px 3px;  
+    }
+    #Calboîte, #enteteCal{
+        display: grid;
+    }
+}
+
+  @media screen and (min-width: 463px) and (max-width: 565px) { 
+    .case, .jour {
+        position: relative;
+        margin: 3px 4px 3px 4px;  
+    }
+    #Calboîte, #enteteCal{
+        display: grid;
+    }
+}
+
+@media screen and (min-width: 565px) and (max-width: 690px) {
+    .case, .jour {
+        position: relative;
+        margin: 7px 9px 7px 9px;
+    }
+    #Calboîte, #enteteCal{
+        display: grid; 
+    }
+}
+
+@media screen and (min-width: 690px) and (max-width: 790px) { 
+    .case, .jour {
+        position: relative;
+        margin: 10px 15px 10px 15px;
+    }
+    #Calboîte, #enteteCal{
+        display: grid; 
+    }
+}
+
+@media screen and (min-width: 790px) and (max-width: 901px) { 
+    .case, .jour {
+        position: relative;
+        margin: 15px 20px 15px 20px;
+    }
+    #Calboîte, #enteteCal{
+        display: grid; 
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1215px) {
+    .case, .jour {
+        position: relative;
+        margin: 18px 25px 18px 25px;
+    }
+    #Calboîte, #enteteCal{
+        display: grid; 
+    }
+}
+
+@media screen and (min-width: 1215px) and (max-width: 1325px) {
+    .case, .jour {
+        position: relative;
+        margin: 20px 35px 20px 35px;
+    }
+    #Calboîte, #enteteCal{
+        display: grid; 
+    }
+}
+
+@media screen and (min-width: 1325px) and (max-width: 1460px) {
+    .case, .jour {
+        position: relative;
+        margin: 20px 40px 20px 40px;
+    }
+    #Calboîte, #enteteCal{
+        display: grid; 
+    }
+}
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        #modal {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+.infotitre{
+    color: white;
+    font-size: 36px;
+}
+
+.infotexte{
+    color: white;
+    font-size: 22px;
+}
+
+.contentcalendrier{
+    max-width: 80%;
+    display: column;
+    justify-content: center;
+    text-align: center;
+    margin: 2vh 7vw 2vh 7vw;
+}
+
+/* barre recherche */
+
+.barre-recherche {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin: 5px;
+    text-align: center;
+    width: 500px;
+  }
+  
+  .barre-recherche input {
+    color: black;
+    font-size: 16px;
+    width: 450px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .barre-recherche input::placeholder {
+    color:  black;
+  }
+  
+  .barre-recherche .loupe {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .loupe {
+      width: 30px;
+      height: 30px;  
+  }
+  
+  .button {
+      color: white;
+      background: #FF7004;
+      text-decoration: none;
+      letter-spacing: 1px;
+      padding: 15px 25px;
+      border-radius: 50px;
+      transition: transform 0.3s, background-color 0.3s, color 0.3s;
+  }
+  
+  .button:hover {
+      background-color: #555;
+  }
+  
+  .barre-recherche button{
+      background-color: transparent; 
+      border: none;
+      padding: 5px;
+  }

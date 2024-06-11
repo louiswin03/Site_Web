@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/Favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styleCO.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Conference 4 World</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                const newPassword = document.querySelector('input[name="NouveauMotDePasse"]').value;
+                const confirmNewPassword = document.querySelector('input[name="ConfirmerNouveauMotDePasse"]').value;
+
+                if (newPassword !== confirmNewPassword) {
+                    alert("Les nouveaux mots de passe ne correspondent pas");
+                    event.preventDefault(); // Empêcher la soumission du formulaire
+                }
+            });
+        });
+    </script>
+    <div class="wrapper">
+        <a href="profil.php" class="back-link"><i class="fa-solid fa-arrow-left" style="color:#000000; font-size: 24px;"></i></a>
+        <form method="POST" action="changement.php">
+            <h1>Modifier le mot de passe</h1>
+            <div class="input-box">
+                <input type="password" placeholder="Ancien mot de passe" name="AncienMotDePasse">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Nouveau mot de passe" name="NouveauMotDePasse">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Confirmer nouveau mot de passe" name="ConfirmerNouveauMotDePasse">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <button name='modification' type="submit" class="btnco">Modifier</button>
+        </form>
+    </div>
+</body>
+</html>
