@@ -13,3 +13,6 @@ Conférences :
 
 Site disponible en anglophone:
 ![image](https://github.com/louiswin03/int-gration/assets/106116649/bf994620-98e6-46a4-915d-c3b6387ca5c8)
+
+De nombreuses fonctionnalités reliées à la base de données:
+![image](https://github.com/louiswin03/int-gration/assets/106116649/1e7c6794-b852-4a90-953b-5dd70e6f2e27)
