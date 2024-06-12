@@ -16,6 +16,10 @@ Onglet Calendrier:
 Site disponible en anglophone:
 ![image](https://github.com/louiswin03/int-gration/assets/106116649/bf994620-98e6-46a4-915d-c3b6387ca5c8)
 
+Page de connexion: 
+![image](https://github.com/louiswin03/int-gration/assets/106116649/d9659794-8735-499e-b25f-a5504c8fb2c9)
+
+
 De nombreuses fonctionnalités reliées à la base de données:
 ![image](https://github.com/louiswin03/int-gration/assets/106116649/1e7c6794-b852-4a90-953b-5dd70e6f2e27)
 ![image](https://github.com/louiswin03/int-gration/assets/106116649/66a1f9ac-3f17-4d03-8738-7d183572269b)
