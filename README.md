@@ -1,4 +1,4 @@
-Voici le github de mon projet de site internet de gestion de conférences réalisé lors du 1er semestre de l'année 2023-2024
+Voici le github de mon projet de site internet de gestion de conférences réalisé en groupe lors du 1er semestre de l'année 2023-2024
 
 
 Quelques photos du site:
